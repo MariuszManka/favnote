@@ -1,16 +1,22 @@
 import styled, { css } from 'styled-components';
 
 const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-decoration: none;
   padding: 0;
-  border: none;
-  background-color: ${({ theme }) => theme.primary};
+  background-color: ${({ activeColor, theme }) => theme[activeColor]};
   width: 220px;
   height: 47px;
+  border: none;
   border-radius: 50px;
   font-family: 'Montserrat';
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: uppercase;
+  cursor: pointer;
 
   ${({ secondary }) =>
     secondary &&
@@ -23,4 +29,3 @@ const Button = styled.button`
 `;
 
 export default Button;
-// background-color: ${({ color }) => color || 'hsl(49, 100%,  58%)'};
